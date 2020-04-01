@@ -91,7 +91,7 @@ class ProcessQueueCommand extends Command
      *
      * @param  InputInterface  $input  Input object
      * @param  OutputInterface $output Output object
-     * @return null
+     * @return int
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -156,6 +156,8 @@ class ProcessQueueCommand extends Command
         } else {
             echo json_encode($reports);
         }
+
+        return 0;
     }
 
     /**

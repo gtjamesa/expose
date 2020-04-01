@@ -26,7 +26,7 @@ class FilterCommand extends Command
      *
      * @param  InputInterface  $input  Input object
      * @param  OutputInterface $output Output object
-     * @return null
+     * @return int
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -49,13 +49,13 @@ class FilterCommand extends Command
                     $output->writeLn('Filter ID '.$id.' not found!');
                 }
             }
-            return;
+            return 0;
         }
 
         foreach ($filters as $filter) {
             echo $filter->getId().': '. $filter->getDescription()."\n";
         }
-        return;
+        return 0;
     }
 }
 
